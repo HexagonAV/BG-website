@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;600;700&display=swap');
+
+:root {
+	--filter-img: 100%;
+}
+
+body {
+	background-color: #0E0E0E;
+	color: white;
+	font-family: 'Rubik', sans-serif;
+	position: relative;
+}
+
+.offcanvas {
+	transition: transform 1s ease-in-out;
+}
+
+.offcanvas-top {
+	height: 100vh;
+}
+
+.nav-a {
+	text-decoration: none;
+	color: #AEAEAE;
+	transition: .7s;
+}
+
+.nav-a:hover {
+	color: white;
+}
+
+#top-btn.active {
+	color: #AEAEAE;
+	border-color: #AEAEAE;
+}
+
+.nav-btn {
+	transition: .7s;
+}
+
+.nav-btn:hover {
+	color: black;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 15px white;
+	border-color: #00000000;
+}
+
+.nav-btn.active {
+	color: #AEAEAE;
+	border-color: #AEAEAE;
+	background-color: #00000000;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.navbar {
+	padding-top: 2.2%;
+}
+
+.active, .nav-link:hover {
+	color: white;
+}
+
+button {
+	background-color: #00000000;
+	color: white;
+	border: 2px solid white;
+	padding: 10px;
+}
+
+#logo {
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 40px;
+	line-height: 47px;
+	letter-spacing: 0.1em;
+}
+
+#logo:hover svg line {
+	stroke: white;
+}
+
+line {
+	transition: .7s;
+}
+
+#logo:hover .vertical-line {
+	transform: translateY(-10px) scale(1, 1.5);
+}
+
+#menu-btn {
+	padding: 5px;
+	margin-right: 8px;
+	transition: 1s;
+}
+
+.active #mb-line1 {
+	transform: rotate(45deg) translate(5px, -10px);
+}
+
+.active #mb-line2 {
+	transform: scale(0);
+}
+
+.active #mb-line3 {
+	transform: rotate(-45deg) translate(-12.5px, -1.5px);
+}
+
+.screen {
+	height: 100vh;
+}
+
+#menu-btn {
+	z-index: 1100;
+}
+
+#offcanvas-btn {
+	border: none;
+	padding: 25px;
+	margin: 5px;
+	width: 95%;
+}
+
+#offcanvas-btn > a {
+	margin: 0px;
+}
+
+.offcanvas-body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #0E0E0E;
+}
+
+.offcanvas-body button {
+	margin: 20px;
+}
+
+.offcanvas-body a:hover, .offcanvas-body a:active {
+	color: white;
+}
+
+#a button {
+	margin-top: 5vh;
+}
+
+#a p {
+	color: #AEAEAE;
+}
+
+#a h1 {
+	font-size: xxx-large;
+}
+
+#b, #c {
+	position: relative;
+	height: 50vh;
+}
+
+#b::before {
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url(imgs/FH5.png);
+	background-size: cover;
+	filter: brightness(var(--filter-img));
+}
+
+#c::before {
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-position: right;
+	background-image: url(imgs/DL2.png);
+	background-size: cover;
+	filter: brightness(var(--filter-img));
+}
+
+.b-half, .c-half {
+	height: 100%;
+	width: 50%;
+	text-align: center;
+	position: relative;
+}
+
+.b-one, .c-one {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+
+#b h2, #c h2 {
+	font-size: 36px;
+}
+
+#b i, #c i {
+	font-size: 24px;
+}
+
+#b p, #c p {
+	color: #AEAEAE;
+	font-size: 20px;
+}
+
+@media (max-width: 575.98px) {
+	#b h2, #c h2 {
+		font-size: 27px;
+	}
+	
+	#b i, #c i {
+		font-size: 18px;
+	}
+	
+	#b p, #c p {
+		font-size: 15px;
+	}
+}
+
+.review {
+	width: 485px;
+	height: 380px;
+	background: #101010;
+	border-radius: 45px;
+}
+
+.review p {
+	margin: 0px;
+}
+
+.review img {
+	margin-right: 18px;
+}
+
+.review-top {
+	display: flex;
+	height: 106px;
+	padding: 46px 46px 0px 46px;
+}
+
+.review-name {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	letter-spacing: 0.1em;
+}
+
+.review-exp {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.1em;
+}
+
+.review-stars {
+	display: inline-block;
+	padding-left: 46px;
+	padding-top: 25px;
+}
+
+.review-stars img {
+	margin: 0px;
+}
+
+.review-date {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 40px;
+	letter-spacing: 0.1em;
+	padding-left: 46px;
+	color: #AEAEAE;
+}
+
+.review-text {
+	padding: 0px 46px;
+}
+
+.review-page {
+	display: flex;
+	justify-content: space-around
+}
+
+.review-btn {
+	width: calc((100vw - 485px * 3) / 6 + 36px);
+}
+
+@media (max-width: 1459.98px) {
+	.review-btn {
+		width: calc((100vw - 485px * 2) / 4 + 36px);
+	}
+}
+
+@media (max-width: 991.98px) {
+	.review-btn {
+		width: calc((100vw - 485px) / 2 + 36px);
+	}
+}
+
+#d {
+	height: 50vh;
+	padding-top: calc((50vh - 380px) / 2);
+}
