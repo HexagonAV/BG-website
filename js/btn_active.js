@@ -6,12 +6,12 @@ btns.forEach(el => {
     let index = btns.indexOf(el);
     el.onclick = () => {
         document.getElementById(abc[index]).scrollIntoView();
-        change_active(btn, false);
+        changeActive(btn, false);
     };
 });
-btn.onclick = () => {change_active(btn, "not")};
+btn.onclick = () => {changeActive(btn, "not")};
 
-function change_active(el, x){
+function changeActive(el, x){
     switch (x) {
         case true:
             el.classList.add("active");
@@ -30,9 +30,9 @@ function change_active(el, x){
             break;
 
         default:
-            console.error("Неправильно указан второй параметр функции change_active (true, false, not)");
+            console.error("Неправильно указан второй параметр функции changeActive (true, false, not)");
             break;
     }
 }
 
-export { abc, change_active};
+export { abc, changeActive};
