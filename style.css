@@ -313,6 +313,32 @@ line {
 	}
 }
 
+@media (max-width: 484.98px) {
+	.review-btn {
+		width: 32px;
+	}
+
+	.review-top {
+		padding: 46px 32px 0px 32px;
+	}
+
+	.review-stars {
+		padding-left: 32px;
+	}
+
+	.review-date {
+		padding-left: 32px;
+	}
+
+	.review-text {
+		padding: 0px 32px;
+	}
+
+	.review {
+		width: 99%;
+	}
+}
+
 #d {
 	height: 50vh;
 	padding-top: calc((50vh - 380px) / 2);

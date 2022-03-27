@@ -27,8 +27,10 @@ getNewReviews(50);
 
 let nr = 0;
 HTMLreviews.forEach(el => {
-    changeReviewContent(el, reviews[nr]);
-    nr++;
+    if (size != 1 && nr != 4) {
+        changeReviewContent(el, reviews[nr]);
+        nr++;
+    }
 });
 
 slider.addEventListener('slide.bs.carousel', (e) => {
@@ -46,6 +48,7 @@ slider.addEventListener('slide.bs.carousel', (e) => {
         }
     } else {
         position -= size;
+        if (position < 0) {e.preventDefault(); position = 0}
         let start = (e.to - 1) * size;
         start += (start < 0) ? (size * 4) : 0;
         for (let x = 0; x < size; x++) {
@@ -87,7 +90,6 @@ function resize(n) {
     size = n;
     for (let page = 0; page < 4; page++) {
         let len = pages[page].children.length;
-        console.log(len);
         while (len != n) {
             pages[page].children.item(len - 1).remove();
             len--;
@@ -109,14 +111,15 @@ function changeReviewContent(el, content) {
     tmp = tmp.children.item(1);
     tmp.children.item(0).textContent = content.name;
     tmp.children.item(1).textContent = "Куплено игр через наш сервис: " + content.buys;
+    tmp.children.item(2).textContent = "Куплено игр: " + content.buys;
     tmp = el.children.item(1);
     let stars = content.stars;
     for (let n = 0; n < 5; n++) {
         if (stars > 0) {
-            tmp.children.item(n).src = "http://127.0.0.1:5500/imgs/star.svg";
+            tmp.children.item(n).src = "https://hexagonav.github.io/BG-website/imgs/star.svg";
             stars--;
         } else {
-            tmp.children.item(n).src = "http://127.0.0.1:5500/imgs/hollow_star.svg";
+            tmp.children.item(n).src = "https://hexagonav.github.io/BG-website/imgs/hollow_star.svg";
         }
     }
     el.children.item(2).textContent = "опубликованно: " + content.date;
